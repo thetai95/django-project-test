@@ -1,0 +1,38 @@
+{% extends 'crawl/base.html' %}
+
+{% block content %}
+{% if errors %}
+{% for e,v in errors.items %}
+<h2 style="color: red">{{ e }}: {{ v }}</h2>
+{% endfor %}
+{% endif %}
+<form action="{% url 'crawl:add' %}" method="post">
+    {% csrf_token %}
+    <table class="margin_auto">
+        <tr>
+            <td><label for="title">Title:</label></td>
+            <td><input type="text" name="title"></td>
+        </tr>
+        <tr>
+            <td><label for="summary">Summary:</label></td>
+            <td><textarea name="summary" rows="4" cols="50"></textarea></td>
+        </tr>
+        <tr>
+            <td><label for="link">Link:</label></td>
+            <td><input type="text" name="link"></td>
+        </tr>
+        <tr>
+            <td><label for="comment">Comment:</label></td>
+            <td><input type="text" name="comment"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Add"></td>
+            <td></td>
+        </tr>
+
+    </table>
+
+
+</form>
+
+{% endblock %}

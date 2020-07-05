@@ -1,0 +1,16 @@
+{% extends 'crawl/base.html' %}
+
+{% block content %}
+
+{% if item %}
+<h1>Are you sure?</h1>
+<p>Are you sure you want to delete the item "<b>{{ item.title }}</b>"?</p>
+<br>
+<form action="{% url 'crawl:delete' item.id %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Yes, I’m sure">
+    <a class="btn" href="{% url 'crawl:update' item.id %}">No, take me back</a>
+</form>
+{% endif %}
+
+{% endblock %}

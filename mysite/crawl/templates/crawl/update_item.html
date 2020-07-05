@@ -1,0 +1,47 @@
+{% extends 'crawl/base.html' %}
+
+{% block content %}
+{% if errors %}
+{% for e,v in errors.items %}
+<h2 style="color: red">{{ e }}: {{ v }}</h2>
+{% endfor %}
+{% endif %}
+
+{% if item %}
+<form action="{% url 'crawl:update' item.id %}" method="post">
+    {% csrf_token %}
+    <table class="margin_auto">
+        <tr>
+            <td><label for="title">Title:</label></td>
+            <td><input type="text" name="title" value="{{ item.title }}"></td>
+        </tr>
+        <tr>
+            <td><label for="summary">Summary:</label></td>
+            <td><textarea name="summary" rows="4" cols="50">{{ item.summary }}</textarea></td>
+        </tr>
+        <tr>
+            <td><label for="link">Link:</label></td>
+            <td><input type="text" name="link" value="{{ item.link }}"></td>
+        </tr>
+        <tr>
+            <td><label for="comment">Comment:</label></td>
+            <td><input type="text" name="comment" value="{% if item.comment %} {{ item.comment }} {% endif %}"></td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" value="Update"></td>
+            <td>
+                <a class="btn" href="{% url 'crawl:delete' item.id %}">Delete</a>
+            </td>
+        </tr>
+    </table>
+    <br>
+
+
+</form>
+{% else %}
+<br>
+<h2 style="color: red">không có dữ liệu phù hợp!</h2>
+{% endif %}
+
+{% endblock %}

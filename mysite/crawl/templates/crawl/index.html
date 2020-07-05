@@ -1,0 +1,37 @@
+{% extends 'crawl/base.html' %}
+
+{% block content %}
+
+<p>
+<form action="{% url 'crawl:index' %}" method="get">
+    <input type="text" placeholder="Search.." name="keyword"
+           value="{% if keyword %}{{ keyword }}{% endif %}">
+    <input type="submit" value="Search">
+</form>
+</p>
+<p><a class="btn" href="{% url 'crawl:add' %}">Add Item</a></td></p>
+
+{% if news %}
+<table id="main">
+    <tr>
+        <th>No.</th>
+        <th>Title</th>
+        <th>Link</th>
+        <th>Comment</th>
+    </tr>
+
+    {% for item in news %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td><a href="{% url 'crawl:update' item.id %}">{{ item.title }}</a></td>
+        <td>{{ item.link }}</td>
+        <td>{% if item.comment %} {{ item.comment }} {% endif %}</td>
+    </tr>
+    {% endfor %}
+    {% else %}
+    <br>
+    <h2 style="color: red">không có dữ liệu!</h2>
+    {% endif %}
+
+</table>
+{% endblock %}

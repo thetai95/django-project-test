@@ -1,0 +1,36 @@
+.margin_auto {
+    margin: auto;
+    margin-top: 50px;
+}
+table#main {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#main td, #main th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+#main tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+.btn {
+      text-decoration: none;
+      background-color: #EEEEEE;
+      color: #09141f;
+      padding: 2px 6px 2px 6px;
+      border: 1px solid #767676;
+      border-radius: 2px;
+}
+
+#main td a {
+    text-decoration: none;
+    color: blue;
+}
+#main td a:hover {
+    text-decoration: underline;
+
+}
