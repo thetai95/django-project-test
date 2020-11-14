@@ -1,3 +1,7 @@
+body {
+    background: white url("../images/bg-body.jpg");
+}
+
 .margin_auto {
     margin: auto;
     margin-top: 50px;
@@ -8,7 +12,7 @@ table#main {
 }
 
 #main td, #main th {
-  border: 1px solid #dddddd;
+  border: 1px solid #000;
   text-align: left;
   padding: 8px;
 }
