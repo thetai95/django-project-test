@@ -18,7 +18,9 @@ from django.urls import path
 from django.conf.urls import include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include(('crawl.api.urls', 'api-crawl'), namespace='api-crawl')),
+    # path('admin/', admin.site.urls),
+    path(
+        'api/',
+        include(('crawl.api.urls', 'api-crawl'), namespace='api-crawl')),
     path('crawl/', include("crawl.urls")),
 ]

@@ -1,14 +1,19 @@
+# import from Django
 from django.shortcuts import render, redirect
 from django.views import View
+from django.db.models import Q
+from django.views.generic.list import ListView
+
+# import from this project
 from .models import News
 from .api.serializers import NewsSerializer
-from django.db.models import Q
 
 
 class ListNews(View):
     """
     view list items and search items
     """
+
     def get(self, request):
         news = News.objects.all()
 
@@ -18,7 +23,8 @@ class ListNews(View):
         # send context dictionary to list view
         context = {}
         if keyword:
-            news = news.filter(Q(title__icontains=keyword) | Q(summary__icontains=keyword))
+            news = news.filter(Q(title__icontains=keyword) |
+                               Q(summary__icontains=keyword))
             context["keyword"] = keyword
 
         news = news.order_by('-id')
@@ -30,6 +36,7 @@ class AddNews(View):
     """
     View add item
     """
+
     def get(self, request):
         return render(request, "crawl/add_item.html")
 
@@ -50,7 +57,11 @@ class AddNews(View):
             errors = {}
             for error, v in serializer.errors.items():
                 errors[error] = v[0]
-            return render(request, "crawl/add_item.html", context={"errors": errors})
+            return render(
+                request,
+                "crawl/add_item.html",
+                context={"errors": errors}
+            )
 
         # save Item
         serializer.save()
@@ -61,6 +72,7 @@ class UpdateNews(View):
     """
     View update item
     """
+
     def get(self, request, pk):
         item = News.objects.filter(pk=pk).first()
         return render(request, "crawl/update_item.html", context={"item": item})
@@ -93,6 +105,7 @@ class DestroyNews(View):
     """
     View confirm delete item
     """
+
     def get(self, request, pk):
         item = News.objects.filter(pk=pk).first()
         return render(request, "crawl/delete_item.html", context={"item": item})

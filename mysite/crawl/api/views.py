@@ -1,8 +1,10 @@
+# import from Django
 from rest_framework import generics
-from ..models import News
-from .serializers import NewsSerializer
 from rest_framework.response import Response
 from django.db.models import Q
+# import from this project
+from ..models import News
+from .serializers import NewsSerializer
 
 
 class CRUDNews(generics.ListAPIView):
@@ -15,7 +17,10 @@ class CRUDNews(generics.ListAPIView):
         if keyword:
             # if keyword -> search item with title and summary
             # else -> list all item
-            self.queryset = self.queryset.filter(Q(title__icontains=keyword) | Q(summary__icontains=keyword))
+            self.queryset = self.queryset.filter(
+                Q(title__icontains=keyword) |
+                Q(summary__icontains=keyword)
+            )
 
         return self.queryset.order_by('-id')
 
@@ -43,7 +48,9 @@ class CRUDNews(generics.ListAPIView):
 
         news = News.objects.filter(pk=id_news).first()
         if not news:
-            return Response({"message": "News with ID={} doesn’t exist!".format(id_news)})
+            return Response({
+                "message": "News with ID={} doesn’t exist!".format(id_news)
+            })
 
         serializer = NewsSerializer(news, data=data)
         if not serializer.is_valid():
@@ -64,7 +71,9 @@ class CRUDNews(generics.ListAPIView):
 
         news = News.objects.filter(pk=id_news).first()
         if not news:
-            return Response({"message": "News with ID={} doesn’t exist!".format(id_news)})
+            return Response({
+                "message": "News with ID={} doesn’t exist!".format(id_news)
+            })
 
         news.delete()
         return Response({
