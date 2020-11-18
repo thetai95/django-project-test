@@ -1,6 +1,9 @@
 Các chức năng có trong Project:
 - Connect Django - Postgres
 - Django web: các file html, static
+- template base không có view return, vậy làm sao để template base nhận đc các biến
+(https://stackoverflow.com/questions/43207563/how-can-i-access-environment-variables-directly-in-a-django-template)
+
 
 - Fix các lỗi, comment liên quan đến HTML/CSS trong (Đánh giá bào test full-stack) -- chưa làm
 - API CRUD (làm lại cho chuẩn CRUD api), các chức năng web CRUD -- chưa làm 
