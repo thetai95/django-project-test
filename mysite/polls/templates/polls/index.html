@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Department List</title>
+    <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+</head>
+<body>
+<h1>--- Department List ---</h1>
+
+{% if departments %}
+<table id="main">
+    <tr>
+        <th width="10%">No.</th>
+        <th width="10%">ID</th>
+        <th>Name</th>
+        <th>City</th>
+    </tr>
+
+    {% for item in departments %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ item.id }}</td>
+        <td><a href="#">{{ item.name }}</a></td>
+        <td>{{ item.city }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% else %}
+<br>
+<h2 style="color: red">không có dữ liệu!</h2>
+{% endif %}
+
+</body>
+</html>

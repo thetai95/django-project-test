@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'crawl.apps.CrawlConfig',
+    'polls',
+    'django_seed',
 ]
 
 MIDDLEWARE = [

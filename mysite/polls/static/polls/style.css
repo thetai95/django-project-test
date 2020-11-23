@@ -1,0 +1,22 @@
+table#main {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#main td, #main th {
+  border: 1px solid #000;
+  text-align: left;
+  padding: 8px;
+}
+
+#main tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+#main td a {
+    text-decoration: none;
+    color: blue;
+}
+#main td a:hover {
+    text-decoration: underline;
+}
