@@ -17,3 +17,9 @@ Các chức năng có trong Project:
 
 - Tích hợp thêm cái call Procedure vào đây k nhỉ (search product - boxme)
 - Decorator là gì ?
+
+-----------
+--- Python locally Invoke aws lambda_function ARN
+có 1 lambda_function đã được deploy lên aws type "arn"
+locally: using client.boto3 invoke function đó.
+config account AWS in locally
