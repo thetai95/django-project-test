@@ -19,7 +19,15 @@ Các chức năng có trong Project:
 - Decorator là gì ?
 
 -----------
---- Python locally Invoke aws lambda_function ARN
+## Python locally Invoke aws lambda_function ARN
 có 1 lambda_function đã được deploy lên aws type "arn"
 locally: using client.boto3 invoke function đó.
 config account AWS in locally
+
+----------
+## send email with Celery
+- install redis, celery, django-celery-results, eventlet(with windows)
+- add file celery.py in setting folder, add setting for celery, for send mail
+(doc celery: https://docs.celeryproject.org/en/stable/django/first-steps-with-django.html)
+- run celery: celery -A mysite worker -l info --pool=solo (--pool using with windows)
+- runserver

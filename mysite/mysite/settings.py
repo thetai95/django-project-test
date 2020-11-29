@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'crawl.apps.CrawlConfig',
     'polls',
     'django_seed',
+    'django_celery_results',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,24 @@ REST_FRAMEWORK = {
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# setting for celery
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_BACKEND = 'django-db'
+
+# CELERY_RESULT_SERIALIZER = 'json'
+# CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
+# CELERY_TASK_ALWAYS_EAGER = True
+# CELERY_STORE_ERRORS_EVEN_IF_IGNORED = True
+
+
+# setting for send email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'congty.zinza@gmail.com'
+EMAIL_HOST_PASSWORD = 'bppxljlmpvunhvzc'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
