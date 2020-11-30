@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'polls',
     'django_seed',
     'django_celery_results',
+    'books',
 ]
 
 MIDDLEWARE = [

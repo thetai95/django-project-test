@@ -20,9 +20,9 @@ Các chức năng có trong Project:
 
 -----------
 ## Python locally Invoke aws lambda_function ARN
-có 1 lambda_function đã được deploy lên aws type "arn"
-locally: using client.boto3 invoke function đó.
-config account AWS in locally
+- có 1 lambda_function đã được deploy lên aws type "arn"
+- locally: using client.boto3 invoke function đó.
+- config account AWS in locally
 
 ----------
 ## send email with Celery
@@ -31,3 +31,10 @@ config account AWS in locally
 (doc celery: https://docs.celeryproject.org/en/stable/django/first-steps-with-django.html)
 - run celery: celery -A mysite worker -l info --pool=solo (--pool using with windows)
 - runserver
+
+----------
+## Model Form CRUD
+- create thì validate ntn
+- (1) đọc cái CRUD trên web: https://rayed.com/posts/2018/05/django-crud-create-retrieve-update-delete/
+- (2) đọc cái góp ý Perob: https://docs.google.com/document/d/1wXinfTfvyRIABfh1i9pzoL7Bx3OrgE1iw8VcJxwX6mM/edit
+- (3) tutorial mà a Việt bảo: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Tutorial_local_library_website

@@ -22,4 +22,5 @@ urlpatterns = [
     path('api/', include(('crawl.api.urls', 'api-crawl'), namespace='api-crawl')),
     path('crawl/', include("crawl.urls")),
     path('polls/', include("polls.urls")),
+    path('books/', include("books.urls")),
 ]
