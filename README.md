@@ -38,3 +38,8 @@ Các chức năng có trong Project:
 - (1) đọc cái CRUD trên web: https://rayed.com/posts/2018/05/django-crud-create-retrieve-update-delete/
 - (2) đọc cái góp ý Perob: https://docs.google.com/document/d/1wXinfTfvyRIABfh1i9pzoL7Bx3OrgE1iw8VcJxwX6mM/edit
 - (3) tutorial mà a Việt bảo: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Tutorial_local_library_website
+----------
+## null=True, blank=True
+- address = models.CharField(max_length=100, blank=True): nếu set như này thì:
+- mặc định null=False => field này bắt buộc có giá trị, nếu admin site k nhập gì => insert ''
+- ngoài admin site không bắt buộc nhập, nếu k nhập gì thì insert giá trị ''
