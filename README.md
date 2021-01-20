@@ -43,3 +43,7 @@ Các chức năng có trong Project:
 - address = models.CharField(max_length=100, blank=True): nếu set như này thì:
 - mặc định null=False => field này bắt buộc có giá trị, nếu admin site k nhập gì => insert ''
 - ngoài admin site không bắt buộc nhập, nếu k nhập gì thì insert giá trị ''
+----------
+## django on_delete=models.CASCADE
+- on_delete=CASCADE trong OneToOneField và trong ForeignKey
+(https://stackoverflow.com/questions/12754024/onetoonefield-and-deleting)
