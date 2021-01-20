@@ -12,4 +12,6 @@ urlpatterns = [
 
     path('send_email/', views.send_email, name='send_email'),
 
+    path('create_city/', views.create_city, name='create_city'),
+
 ]

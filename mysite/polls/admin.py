@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Department
+from .models import Department, City
 
 
 class DepartmentAdmin(admin.ModelAdmin):
@@ -8,3 +8,4 @@ class DepartmentAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Department, DepartmentAdmin)
+admin.site.register(City)

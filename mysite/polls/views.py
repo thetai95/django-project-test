@@ -2,7 +2,7 @@
 from django.shortcuts import render
 from django.views import View
 # import from this project
-from .models import Department
+from .models import Department, City
 
 
 class ListItem(View):
@@ -73,3 +73,13 @@ def send_email(request):
     send_email_with_celery.delay(**dict_info)
 
     return render(request, 'polls/send_email.html')
+
+
+def create_city(request):
+    data_city = {
+        "name": "ND",
+        "created": "2020-11-05 10:57:33",
+    }
+    City.objects.create(**data_city)
+
+    return render(request, 'polls/create_city.html')
