@@ -47,3 +47,6 @@ Các chức năng có trong Project:
 ## django on_delete=models.CASCADE
 - on_delete=CASCADE trong OneToOneField và trong ForeignKey
 (https://stackoverflow.com/questions/12754024/onetoonefield-and-deleting)
+
+## Fetch API
+https://openplanning.net/12395/javascript-fetch-api

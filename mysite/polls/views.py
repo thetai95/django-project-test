@@ -83,3 +83,7 @@ def create_city(request):
     City.objects.create(**data_city)
 
     return render(request, 'polls/create_city.html')
+
+
+def test_fetch(request):
+    return render(request, 'polls/test_fetch.html')

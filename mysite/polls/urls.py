@@ -14,4 +14,6 @@ urlpatterns = [
 
     path('create_city/', views.create_city, name='create_city'),
 
+    path('test_fetch/', views.test_fetch, name='test_fetch'),
+
 ]
