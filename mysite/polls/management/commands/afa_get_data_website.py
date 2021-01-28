@@ -6,8 +6,8 @@ import csv
 URL_LOGIN = "https://af-a.jp/login"
 URL_GET_WEBSITE = "https://af-a.jp/media?mime=csv.all"
 
-username = "ohtsubo@tubox.co.jp"
-password = "sE9cMJtPax"
+username = "username"
+password = "password"
 
 
 class Command(BaseCommand):
