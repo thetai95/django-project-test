@@ -48,7 +48,7 @@ class Command(BaseCommand):
 
         # print(file_csv.text)
 
-        decoded_content = file_csv.content.decode('unicode_escape')
+        decoded_content = file_csv.content.decode('shift-jis')
         cr = csv.reader(decoded_content.splitlines(), delimiter=',')
         my_list = list(cr)
 
