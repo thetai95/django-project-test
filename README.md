@@ -50,3 +50,11 @@ Các chức năng có trong Project:
 
 ## Fetch API
 https://openplanning.net/12395/javascript-fetch-api
+
+## url, path, re_path thì đều để khai báo đường dẫn tới view
++ url khai báo đường dẫn có thể sử dụng đc Regex trong đó để validate cho đường dẫn
+
++ path() thì dễ dàng sử dụng hơn với url. ví dụ:
+path('users/<int:id>') chỉ cần khai báo kiểu dữ liệu và tên biến là được, còn url thì không dùng đc
+
++ re_path thì có các chức năng nâng cao hơn như có thể dùng Regex để validate cho urlcó thể thay thế cho việc dùng url
